@@ -6,11 +6,11 @@
 #define DHT_TYPE    DHT11
 #define LDR_PIN     A0
 
-const char* ssid     = "Bikini Bottom";
-const char* password = "Nobita88";
+const char* ssid     = "WIFI-NAME";
+const char* password = "WIFI-PASSWORD";
 
 unsigned long channelID = 3301172;
-const char* apiKey      = "FV3BGGTZZI7L8D0I";
+const char* apiKey      = "GETYOUROWNAPI";
 
 DHT dht(DHT_PIN, DHT_TYPE);
 WiFiClient client;
