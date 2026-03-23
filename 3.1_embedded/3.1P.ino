@@ -45,7 +45,6 @@ const unsigned long CHECK_INTERVAL = 5000;  // Check every 5 seconds (ms)
 bool sunlightActive   = false;  // Current sunlight state
 unsigned long lastCheckTime = 0;
 
-// ─────────────────────────────────────────────────────────────
 void setup() {
   Serial.begin(9600);
   while (!Serial);
@@ -54,7 +53,6 @@ void setup() {
   setupWiFi();
 }
 
-// ─────────────────────────────────────────────────────────────
 void loop() {
   unsigned long currentTime = millis();
 
