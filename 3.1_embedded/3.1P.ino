@@ -27,8 +27,8 @@
 const char* WIFI_SSID     = "Bikini Bottom";
 const char* WIFI_PASSWORD = "Nobita88";
 
-// ── IFTTT Configuration ───────────────────────────────────────
-const char* IFTTT_KEY         = "bVslGLOlac8Wx51SWqDLzM";
+// IFTTT Configuration
+const char* IFTTT_KEY         = "GETYOUROWN";
 const char* IFTTT_EVENT_ON    = "sunlight_start";   // Event name for sunlight detected
 const char* IFTTT_EVENT_OFF   = "sunlight_stop";    // Event name for sunlight stopped
 const char* IFTTT_HOST        = "maker.ifttt.com";
