@@ -38,7 +38,7 @@ const int   LDR_PIN           = A0;
 const int   LIGHT_THRESHOLD   = 600;  // Values above this = sunlight detected
                                       // Adjust based on the environment
 
-// ── Timing ───────────────────────────────────────────────────
+// Timing
 const unsigned long CHECK_INTERVAL = 5000;  // Check every 5 seconds (ms)
 
 // ── State Tracking ────────────────────────────────────────────
