@@ -24,8 +24,8 @@
 #include <WiFiNINA.h>
 
 // WiFi Credentials
-const char* WIFI_SSID     = "Bikini Bottom";
-const char* WIFI_PASSWORD = "Nobita88";
+const char* WIFI_SSID     = "WIFINAME";
+const char* WIFI_PASSWORD = "WIFIPASSWORD";
 
 // IFTTT Configuration
 const char* IFTTT_KEY         = "GETYOUROWN";
