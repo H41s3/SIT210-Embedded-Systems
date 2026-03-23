@@ -23,7 +23,7 @@
 
 #include <WiFiNINA.h>
 
-// ── WiFi Credentials ──────────────────────────────────────────
+// WiFi Credentials
 const char* WIFI_SSID     = "Bikini Bottom";
 const char* WIFI_PASSWORD = "Nobita88";
 
