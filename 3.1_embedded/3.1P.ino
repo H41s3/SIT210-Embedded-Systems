@@ -80,14 +80,12 @@ void loop() {
   }
 }
 
-// ─────────────────────────────────────────────────────────────
 // Sets up pin modes
 void setupPins() {
   pinMode(LDR_PIN, INPUT);
   Serial.println("Pins initialised.");
 }
 
-// ─────────────────────────────────────────────────────────────
 // Connects to WiFi network
 void setupWiFi() {
   Serial.print("Connecting to WiFi: ");
@@ -106,19 +104,16 @@ void setupWiFi() {
   Serial.println(WiFi.localIP());
 }
 
-// ─────────────────────────────────────────────────────────────
 // Reads and returns the current LDR sensor value (0-1023)
 int readLightLevel() {
   return analogRead(LDR_PIN);
 }
 
-// ─────────────────────────────────────────────────────────────
 // Returns true if the light level indicates sunlight
 bool isSunlight(int lightLevel) {
   return lightLevel > LIGHT_THRESHOLD;
 }
 
-// ─────────────────────────────────────────────────────────────
 // Sends an IFTTT Webhook trigger for the given event name.
 // Passes the current light level as value1.
 void sendIFTTTTrigger(const char* eventName, int lightLevel) {
