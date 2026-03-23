@@ -33,10 +33,10 @@ const char* IFTTT_EVENT_ON    = "sunlight_start";   // Event name for sunlight d
 const char* IFTTT_EVENT_OFF   = "sunlight_stop";    // Event name for sunlight stopped
 const char* IFTTT_HOST        = "maker.ifttt.com";
 
-// ── Sensor Configuration ──────────────────────────────────────
+// Sensor Configuration
 const int   LDR_PIN           = A0;
 const int   LIGHT_THRESHOLD   = 600;  // Values above this = sunlight detected
-                                      // Adjust based on your environment
+                                      // Adjust based on the environment
 
 // ── Timing ───────────────────────────────────────────────────
 const unsigned long CHECK_INTERVAL = 5000;  // Check every 5 seconds (ms)
