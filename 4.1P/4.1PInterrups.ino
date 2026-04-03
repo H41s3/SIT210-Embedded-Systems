@@ -10,7 +10,7 @@ const int LED1_PIN   = 4;   // LED 1 output
 const int LED2_PIN   = 5;   // LED 2 output
 const int LDR_PIN    = A0;  // LDR module signal — analog input
 
-// LDR Configuration ───────────────────────────────────
+// LDR Configuration
 const int DARK_THRESHOLD = 2;
 
 // ── State Variables ─────────────────────────────────────
