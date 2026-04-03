@@ -13,7 +13,7 @@ const int LDR_PIN    = A0;  // LDR module signal — analog input
 // LDR Configuration
 const int DARK_THRESHOLD = 2;
 
-// ── State Variables ─────────────────────────────────────
+// State Variables
 volatile bool pirTriggered    = false;
 volatile bool switchTriggered = false;
 bool ledsOn = false;
