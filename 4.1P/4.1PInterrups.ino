@@ -1,22 +1,24 @@
-  // ── Pin Definitions ──────────────────────────────────
-const int PIR_PIN    = 2;   // PIR sensor  — D2, RISING interrupt
-const int SWITCH_PIN = 3;   // Slider switch — D3, CHANGE interrupt
+// Description: Interrupt-based automatic lighting system.
+//   PIR sensor detects motion; LDR module reads ambient light.
+//   3-pin slider switch (2-C-1) provides a manual backup toggle.
+//   ISR flags keep interrupt handlers minimal and safe.
+
+// Pin Definitions
+const int PIR_PIN    = 2;   // PIR sensor OUT  — D2, RISING interrupt
+const int SWITCH_PIN = 3;   // Slider switch C — D3, CHANGE interrupt
 const int LED1_PIN   = 4;   // LED 1 output
 const int LED2_PIN   = 5;   // LED 2 output
-const int LDR_PIN    = A0;  // LDR module — analog input
+const int LDR_PIN    = A0;  // LDR module signal — analog input
 
-// ── LDR Configuration ────────────────────────────────
-// Higher analogRead() = darker. Tune by reading Serial in your space.
-const int DARK_THRESHOLD = 600;
+// LDR Configuration ───────────────────────────────────
+const int DARK_THRESHOLD = 2;
 
-// ── State Variables ──────────────────────────────────
-// volatile: prevents compiler caching — ISR and loop() share these.
+// ── State Variables ─────────────────────────────────────
 volatile bool pirTriggered    = false;
 volatile bool switchTriggered = false;
 bool ledsOn = false;
 
-// ── Interrupt Service Routines ───────────────────────
-// ISRs only set a flag — no analogRead or Serial here.
+// ── Interrupt Service Routines ──────────────────────────
 void onMotionDetected() {
   pirTriggered = true;
 }
@@ -25,19 +27,19 @@ void onSwitchToggled() {
   switchTriggered = true;
 }
 
-// ── Read Ambient Light ───────────────────────────────
+// ── Read Ambient Light ──────────────────────────────────
 int readLightLevel() {
   return analogRead(LDR_PIN);
 }
 
-// ── LED Control ──────────────────────────────────────
+// ── LED Control ─────────────────────────────────────────
 void setLEDs(bool state) {
   digitalWrite(LED1_PIN, state ? HIGH : LOW);
   digitalWrite(LED2_PIN, state ? HIGH : LOW);
   ledsOn = state;
 }
 
-// ── PIR Event Handler ────────────────────────────────
+// ── PIR Event Handler ───────────────────────────────────
 void handlePIR() {
   int lightLevel = readLightLevel();
   Serial.print("[PIR] Motion detected. LDR: ");
@@ -50,19 +52,19 @@ void handlePIR() {
   }
 }
 
-// ── Switch Event Handler ─────────────────────────────
+// ── Switch Event Handler ────────────────────────────────
 void handleSwitch() {
   setLEDs(!ledsOn);
   Serial.print("[SWITCH] Slider activated — LEDs now: ");
   Serial.println(ledsOn ? "ON" : "OFF");
 }
 
-// ── Setup ────────────────────────────────────────────
+// ── Setup 
 void setup() {
   Serial.begin(9600);
 
   pinMode(PIR_PIN,    INPUT);
-  pinMode(SWITCH_PIN, INPUT_PULLUP); // prevents false triggers
+  pinMode(SWITCH_PIN, INPUT_PULLUP);
   pinMode(LED1_PIN,   OUTPUT);
   pinMode(LED2_PIN,   OUTPUT);
 
@@ -75,8 +77,7 @@ void setup() {
   Serial.println("Waiting for motion or switch input...");
 }
 
-// ── Loop ─────────────────────────────────────────────
-// Checks ISR flags — all real work handled here, not in ISRs.
+// ── Loop ────────────────────────────────────────────────
 void loop() {
   if (pirTriggered) {
     pirTriggered = false;
@@ -88,5 +89,3 @@ void loop() {
     handleSwitch();
   }
 }
-
-
