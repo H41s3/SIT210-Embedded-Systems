@@ -32,6 +32,3 @@ python3 task5_gui.py
 - GUI has 3 radio buttons — one per room
 - Selecting a radio button calls `control_leds()` which turns on the selected LED and turns off all others
 - Exit button calls `on_exit()` which cleans up GPIO and closes the window
-
-## Demo Video
-[Insert YouTube or Panopto link here]
