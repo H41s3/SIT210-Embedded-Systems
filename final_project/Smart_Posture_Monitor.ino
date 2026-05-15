@@ -1,7 +1,7 @@
 /*
  * Smart Posture Monitor
  * SIT210 Embedded Systems Development
- * Student: Emilio Joseph Calma | s223976317
+ * Student: Emilio Joseph Calma
  *
  * Hardware:
  *   - Arduino Nano 33 IoT (built-in LSM6DS3 IMU)
