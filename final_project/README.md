@@ -4,11 +4,6 @@ Student: Emilio Joseph Calma | s223976317 | Deakin University
 
 ---
 
-## Demo Video
-[Watch on Panopto](https://deakin.au.panopto.com/Panopto/Pages/Viewer.aspx?id=e9f6cb17-b0f3-44df-93e3-b44b00afe24b)
-
----
-
 ## Project Overview
 
 The Smart Posture Monitor is an embedded IoT system that helps desk workers and students become aware of poor posture before it causes pain or injury. The Arduino Nano 33 IoT reads tilt angle from its built-in LSM6DS3 IMU every second. If the tilt exceeds 30 degrees forward for more than 60 consecutive seconds, the system fires a local LED and buzzer alert, updates an I2C OLED display with a correction message, and sends an email notification via IFTTT Webhooks over WiFi. All posture events are logged to ThingSpeak for trend analysis.
@@ -169,10 +164,3 @@ Tilt: 1.89 deg
 ## Hardware Note
 
 The LSM6DS3 IMU is built into the Arduino Nano 33 IoT — no external IMU purchase was required. The Keyestudio LDR module used in previous tasks is not used in this project. WiFi credentials and API keys have been replaced with placeholders in this repository.
-
----
-
-## Project Links
-
-- **ThingSpeak Channel:** [INSERT THINGSPEAK LINK HERE]
-- **Demo Video:** [Panopto](https://deakin.au.panopto.com/Panopto/Pages/Viewer.aspx?id=e9f6cb17-b0f3-44df-93e3-b44b00afe24b)
