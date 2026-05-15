@@ -82,7 +82,7 @@ Install via Arduino IDE — Sketch → Include Library → Manage Libraries:
 3. Copy the Write API Key from the API Keys tab
 
 ### 3. Configure credentials in the code
-Open `SmartPostureMonitor.ino` and fill in:
+Open `Smart_Posture_Monitor.ino` and fill in:
 
 ```cpp
 const char* WIFI_SSID     = "YOUR_WIFI_SSID";
