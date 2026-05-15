@@ -25,17 +25,17 @@
 #include <ArduinoHttpClient.h>
 
 // WiFi credentials
-const char* WIFI_SSID     = "Bikini Bottom";
-const char* WIFI_PASSWORD = "Nobita88";
+const char* WIFI_SSID     = "WIFI NAME";
+const char* WIFI_PASSWORD = "WIFI PASSWORD";
 
 // IFTTT Webhook
 const char* IFTTT_HOST    = "maker.ifttt.com";
-const char* IFTTT_KEY     = "bVslGLOlac8Wx51SWqDLzM";
+const char* IFTTT_KEY     = "IFTTT API KEY";
 const char* IFTTT_EVENT   = "posture_alert";
 
 // ThingSpeak
 const char* TS_HOST       = "api.thingspeak.com";
-const char* TS_API_KEY    = "VHD3G61HAEL2CQUO";
+const char* TS_API_KEY    = "THING SPEAK API KEY";
 
 // Pin definitions
 #define LED_PIN     4
